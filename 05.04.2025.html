@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="800" height="500"></canvas>
+
+
+    <script>
+        let canvas = document.getElementById("myCanvas");
+let cxt = canvas.getContext("2d");        
+                                                
+cxt.beginPath();                          
+cxt.moveTo(50, 50);                       
+cxt.lineTo(500, 50);                      
+cxt.lineWidth = 15;       
+cxt.strokeStyle = "#ff0000"; 
+cxt.lineCap = "butt";                     
+cxt.stroke();                             
+                                                
+cxt.beginPath();                          
+cxt.moveTo(50, 100);                      
+cxt.lineTo(500, 100);                     
+cxt.lineWidth = 15;                       
+cxt.strokeStyle = "#00ff00";              
+cxt.lineCap = "round";                    
+cxt.stroke();
+cxt.beginPath();                          
+cxt.moveTo(50, 150);                      
+cxt.lineTo(500, 150);                     
+cxt.lineWidth = 15;                       
+cxt.strokeStyle = "#0000ff";              
+cxt.lineCap = "square";                   
+cxt.stroke();
+
+cxt.beginPath();
+cxt.moveTo(500,250);
+cxt.lineTo(258,100);
+cxt.lineTo(258,400);
+cxt.closePath();
+cxt.fillStyle="red";
+cxt.fill();
+
+cxt.strokeStyle="#FFFF00";
+cxt.lineWidth = 5;
+cxt.stroke();
+    </script>
+</body>
+</html>

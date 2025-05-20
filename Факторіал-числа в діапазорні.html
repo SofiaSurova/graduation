@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мінімальне та Максимальне Значення</title>
+    <style>
+        body {
+            background-color: #1e1e1e;
+            color: #9ff;
+            font-family: sans-serif;
+            font-size: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #2c2c2c;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            text-align: left;
+            width: 400px;
+        }
+
+        h1 {
+            color: #00ffff;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #d4d4d4;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #555;
+            border-radius: 5px;
+            background-color: #333;
+            color: #fff;
+            font-size: 18px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #00ffff;
+            color: #1e1e1e;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #00b3b3;
+        }
+
+        .output {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #555;
+            border-radius: 5px;
+            background-color: #333;
+            color: #fff;
+            font-size: 18px;
+        }
+
+        .highlight {
+            color: #ffcc00;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Мінімальне та Максимальне Значення</h1>
+        <form id="numberForm">
+            <label for="min">Введіть мінімальне значення:</label>
+            <input type="number" id="min" name="min" value="1">
+
+            <label for="max">Введіть максимальне значення:</label>
+            <input type="number" id="max" name="max" value="5">
+
+            <button type="button" onclick="calculate()">Розрахувати</button>
+        </form>
+
+        <div id="output" class="output" style="display: none;"></div>
+
+        <script>
+            function calculate() {
+                const minInput = document.getElementById('min');
+                const maxInput = document.getElementById('max');
+                const outputDiv = document.getElementById('output');
+
+                const min = parseInt(minInput.value);
+                const max = parseInt(maxInput.value);
+
+                if (isNaN(min) || isNaN(max)) {
+                    outputDiv.innerHTML = `<p style="color: red;">Будь ласка, введіть коректні числа.</p>`;
+                    outputDiv.style.display = 'block';
+                    return;
+                }
+
+                if (min > max) {
+                    outputDiv.innerHTML = `<p style="color: red;">Мінімальне значення не може бути більшим за максимальне.</p>`;
+                    outputDiv.style.display = 'block';
+                    return;
+                }
+
+                let sum = 0;
+                let fac = 1;
+                let evenNumbers = [];
+
+                for (let i = min; i <= max; i++) {
+                    if (i % 2 === 0) {
+                        evenNumbers.push(i);
+                    }
+                    sum += i;
+                    fac *= i;
+                }
+
+                let evenNumbersText = evenNumbers.length > 0 ? evenNumbers.join(', ') : 'Парних чисел немає в цьому діапазоні.';
+
+                outputDiv.innerHTML = `
+                    <p>Ви ввели мінімальне значення: <span class="highlight">${min}</span></p>
+                    <p>Ви ввели максимальне значення: <span class="highlight">${max}</span></p><br>
+                    <p>Парні числа в діапазоні: ${evenNumbersText}</p><br>
+                    <p>Сума чисел у діапазоні: <span class="highlight">${sum}</span></p>
+                    <p>Факторіал чисел у діапазоні: <span class="highlight">${fac}</span></p>
+                `;
+                outputDiv.style.display = 'block';
+            }
+        </script>
+    </div>
+</body>
+</html>

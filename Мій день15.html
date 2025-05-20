@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(15, 229, 197);
+}
+
+.newspaper {
+  padding: 0.5rem;
+  text-transform: uppercase;
+  text-align: center;
+  background-color: white;
+  cursor: pointer;
+}
+
+    </style>
+</head>
+<body>
+ 
+<div class="newspaper">1 червня — це мій день народження. <br />Мені сьогодні 17.</div>
+<script>
+const newspaperSpinning = [
+  { transform: "rotate(0) scale(1)" },
+  { transform: "rotate(360deg) scale(0)" },
+];
+
+const newspaperTiming = {
+  duration: 2000,
+  iterations: 1,
+};
+
+const newspaper = document.querySelector(".newspaper");
+
+newspaper.addEventListener("click", () => {
+  newspaper.animate(newspaperSpinning, newspaperTiming);
+});
+
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Анімація потяга</title>
+    <style>
+        #train {
+            position: absolute;
+            left: 0;
+            top: 100px;
+            cursor: pointer;
+            transition: left 2s linear; 
+        }
+    </style>
+</head>
+<body>
+    <img id="train" src="04-27-57-299_512.webp" alt="Потяг">
+
+    <script>
+        const train = document.getElementById('train');
+        const windowWidth = (window.innerWidth - train.offsetWidth)/2; 
+
+        train.onclick = function() {
+            train.style.left = windowWidth + 'px'; 
+        };
+    </script>
+</body>
+</html>

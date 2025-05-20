@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Чорно-біла шахівниця</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #333; /* Темний фон сторінки */
+        }
+
+        .chessboard {
+            width: 480px; /* Збільшений розмір шахівниці */
+            height: 480px;
+            border: 2px solid black;
+        }
+
+        .row {
+            display: flex;
+        }
+
+        .cell {
+            width: 60px; /* Збільшений розмір клітинки */
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px; /* Збільшений розмір шрифту (якщо є вміст) */
+        }
+
+        .white {
+            background-color: #fff; /* Білий колір клітинок */
+        }
+
+        .black {
+            background-color: #000; /* Чорний колір клітинок */
+            color: #fff; /* Колір тексту на чорних клітинках (якщо є) */
+        }
+    </style>
+</head>
+<body>
+    <div class="chessboard">
+        <script>
+            const chessboard = document.querySelector('.chessboard');
+
+            for (let i = 0; i < 8; i++) {
+                const row = document.createElement('div');
+                row.classList.add('row');
+                chessboard.appendChild(row);
+
+                for (let j = 0; j < 8; j++) {
+                    const cell = document.createElement('div');
+                    cell.classList.add('cell');
+
+                    if ((i + j) % 2 === 0) {
+                        cell.classList.add('white');
+                    } else {
+                        cell.classList.add('black');
+                    }
+                    row.appendChild(cell);
+                }
+            }
+        </script>
+    </div>
+</body>
+</html>

@@ -1,0 +1,93 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #111;
+  color: #eee;
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.content {
+  flex: 1;
+  padding: 40px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 3em;
+  color: #00f7ff;
+  text-align: center;
+  margin-bottom: 40px;
+  text-shadow: 0 0 15px #00f7ff;
+}
+
+.about {
+  background: #1a1a1a;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 8px 16px rgba(0, 255, 255, 0.1);
+  margin-bottom: 50px;
+}
+
+.about h2 {
+  color: #ff00cc;
+  margin-bottom: 15px;
+  text-shadow: 0 0 10px #ff00cc;
+}
+
+.about p {
+  font-size: 1.2em;
+}
+
+.projects {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.projects h2 {
+  color: #00f7ff;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px #00f7ff;
+}
+
+.buttons-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.btn-link button {
+  background: linear-gradient(45deg, #ff00cc, #3333ff);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.2em;
+  font-weight: bold;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background 0.4s, transform 0.3s, box-shadow 0.4s;
+}
+
+.btn-link button:hover {
+  background: linear-gradient(45deg, #3333ff, #ff00cc);
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #ff00cc, 0 0 25px #3333ff;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9em;
+  background: #111;
+  color: #666;
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <style>
+        body {
+            background-color: darkolivegreen;
+            font-size: 50px;
+            color: #9ff;
+        }
+    </style>
+</head>
+<body>
+     <script>
+       let a =prompt("Введіть сторону a", 3);
+       let b =prompt("Введіть сторону b", 4);
+       let c =prompt("Введіть сторону c", 5);
+       if(a==null||b==null || c==null){
+        document.write("Веденя скасовано")
+        
+       }else if(isNaN(a) || isNaN(b) || isNaN(c) ){
+        document.write("Ви вводете не число!")
+       }else if(())
+
+
+       document.writeln(`a дорівнює ${a}<br>`);
+       document.writeln(`b дорівнює ${b}<br>`);
+       document.writeln(`c дорівнює ${c}<br>`);
+       a=parseFloat(a);
+       b=parseFloat(b);
+       c=parseFloat(c);
+
+
+
+
+       let P = a + b + c;
+       let p = P / 2;
+
+       let S = Math.sqrt(p * (p - a) * (p - b) * (p - c));
+
+       if ((S > 0) && (a > 0) && (b > 0) && (c > 0) && (a + b > c) && (a + c > b) && (b + c > a)) {
+           document.writeln(`Периметр дорівнює ${P}<br>`);
+           document.writeln(`Площа дорівнює ${S.toFixed(2)}<br>`);
+       } else {
+           document.writeln(`Трикутника не існує<br>`);
+       }
+     </script>
+
+    <p style="font-size: 50px; color: #0f0; background: linear-gradient(yellow, orange);">Ми вивчаємо JavaScript</p>
+
+</body>
+</html>

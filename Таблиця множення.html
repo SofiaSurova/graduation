@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Таблиця множення</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 50%;
+            text-align: center;
+        }
+        th, td {
+            border: 1px solid black;
+            width: 40px;
+            height: 40px;
+        }
+        th {
+            background-color: #4a63a1;
+            color: white;
+        }
+        td:first-child, th:first-child {
+            background-color: #d66a2b;
+            color: white;
+        }
+        .square {
+            background-color: #4caf50;
+            color: white;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2>Таблиця множення</h2>
+    <table id="multiplicationTable"></table>
+    
+    <script>
+        function createMultiplicationTable() {
+            let table = document.getElementById("multiplicationTable");
+            
+            for (let i = 0; i <= 10; i++) {
+                let row = document.createElement("tr");
+                
+                for (let j = 0; j <= 10; j++) {
+                    let cell = document.createElement(i === 0 || j === 0 ? "th" : "td");
+                    
+                    if (i === 0 && j === 0) {
+                        cell.textContent = "";
+                    } else if (i === 0) {
+                        cell.textContent = j;
+                    } else if (j === 0) {
+                        cell.textContent = i;
+                    } else {
+                        let result = i * j;
+                        cell.textContent = result;
+                        
+                        if (i === j) {
+                            cell.classList.add("square");
+                        }
+                    }
+                    row.appendChild(cell);
+                }
+                table.appendChild(row);
+            }
+        }
+        
+        createMultiplicationTable();
+    </script>
+</body>
+</html>

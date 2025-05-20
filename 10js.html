@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="500" height="500" style="border:1px solid;"></canvas>
+    <script>
+        let c = document.getElementById("myCanvas");
+        let cxt = c.getContext("2d");
+
+        const size = 50; 
+        const count = 10; 
+
+        for (let i = 0; i < count; i++) {
+         
+            cxt.fillStyle = `rgb(0, 0, ${180 + i * 7})`; 
+
+         
+            cxt.fillRect(i * size, i * size, size, size);
+
+           
+            cxt.lineWidth = 6;
+            cxt.strokeStyle = (i % 3 === 0) ? "red" : (i % 3 === 1) ? "green" : "black"; 
+            cxt.setLineDash([i * 2, 5]); 
+            cxt.strokeRect(i * size, i * size, size, size);
+        }
+    </script>
+</body>
+</html>

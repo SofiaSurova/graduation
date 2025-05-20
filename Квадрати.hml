@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Квадрати по діагоналі</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 30px;
+        }
+        canvas {
+            border: 1px solid black;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Малювання квадратів по діагоналі</h2>
+    <label for="count">Кількість квадратів:</label>
+    <input type="number" id="count" min="1" max="100" value="5">
+    <button onclick="drawSquares()">Намалювати</button>
+    <br><br>
+    <canvas id="canvas" width="600" height="400"></canvas>
+
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+
+        function getRandomColor() {
+            const r = Math.floor(Math.random() * 256);
+            const g = Math.floor(Math.random() * 256);
+            const b = Math.floor(Math.random() * 256);
+            return `rgb(${r},${g},${b})`;
+        }
+
+        function drawSquares() {
+            const count = parseInt(document.getElementById('count').value);
+            const size = 40; // Розмір одного квадрата
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            for (let i = 0; i < count; i++) {
+                const x = i * size;
+                const y = i * size;
+                if (x + size > canvas.width || y + size > canvas.height) break;
+
+                ctx.fillStyle = getRandomColor();
+                ctx.fillRect(x, y, size, size);
+            }
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="500" height="500" style="border:1px solid #d3d3d3;"></canvas>
+    <script>
+        let c = document.getElementById("myCanvas");
+        let cxt = c.getContext("2d");
+
+        cxt.fillStyle = "rgb(200, 0, 0)";
+
+        let x = 15, y = 15;
+        for(let i = 0; i < 10; i++) {
+            cxt.fillRect(x, y, 100, 100);
+            x += 15;
+            y += 15;
+
+        }
+        let colors=["red","yellow","blue","green","orange","pink","purple","violet","#84ff73","#a773ff","#ff73f8","#ff7373","#41354d","#f7fc71","#91ffdd"]
+
+        cxt.globalAlpha = 0.5;
+    </script>
+</body>
+</html>

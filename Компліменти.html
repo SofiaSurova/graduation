@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+.myButton {
+	box-shadow:inset 0px 1px 0px 0px #e184f3;
+	background:linear-gradient(to bottom, #c123de 5%, #a20dbd 100%);
+	background-color:#c123de;
+	border-radius:6px;
+	border:1px solid #a511c0;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:28px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #9b14b3;
+}
+.myButton:hover {
+	background:linear-gradient(to bottom, #a20dbd 5%, #c123de 100%);
+	background-color:#a20dbd;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+.container{
+            width: 50%;
+         box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+        margin-top: 100px;
+        font-size: 25px;
+        background-color: rgba(255, 255, 255, 0.133);
+        padding: 30px 60px;
+        margin: auto;  
+        
+        
+        border-radius: 20px;
+        }
+.side {
+    width: 75px;
+    text-align: center;
+
+    padding: 10px 0;
+    font-size: 25px;
+    color: #070707;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #070707;
+    outline: none;
+    background: transparent;}
+
+    </style>
+</head>
+<body>
+    <script>
+ function compliments(){
+let compliments=["funny","smart","cool", "genius","clever", "sensible","cheerful","generous","kind","creative","quick-witted","hard-working","determined","optimistic","determined"]
+let animals=["polar bear", "cat","leopard","butterfly","duck","rabbit","ladybug", "monkey","rhino","squirrel","lion","chicken","cow","dog","deer","bird"]
+let colors=["red","yellow","blue","green","orange","pink","purple","violet","#84ff73","#a773ff","#ff73f8","#ff7373","#41354d","#f7fc71","#91ffdd"]
+
+let number= +document.compliments.a.value;
+let answer=document.getElementById("answer");
+let string='';
+if(isNaN(number)){
+    string="Ви ввели не число."
+}else{
+        for (i = 1; i <= number; i++){
+            let rand1=Math.floor(Math.random()*colors.length)
+            let rand2=Math.floor(Math.random()*compliments.length)
+            let rand3=Math.floor(Math.random()*animals.length)       
+           string+=`<p style='color:${colors[rand1]}'>${i} ) You are as ${compliments[rand2]} as ${animals[rand3]}! </p>`;
+       } }
+
+        answer.innerHTML = string;
+    }    
+    </script>
+    <div class="container">
+    <form action="javascript:compliments()" name="compliments">
+        <input type="number" name="a" value="100" class="side" size="4">
+        <input class="myButton" type="submit" value="Згенерувати">
+        <input class="myButton" type="reset" name="reset" value="Скинути"><br>
+
+    </form>
+    <span id="answer"></span>
+</div>
+</body>
+</html>
